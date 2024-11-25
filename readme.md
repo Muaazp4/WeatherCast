@@ -22,7 +22,7 @@ A Python-based weather application that provides real-time weather information f
 - **Pillow (PIL)**: Handles the weather condition icons.
 - **Requests**: For making HTTP requests to fetch weather data and detect user location via IP.
 
-# Requirements
+ Requirements
 
 To run this application, you will need:
 
@@ -31,31 +31,40 @@ To run this application, you will need:
   - `tkinter`
   - `Pillow`
   - `requests`
+  - `python-dotenv` (for managing environment variables)
 
 # Installation
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/weather-app.git
-    cd weather-app
-    ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/weather-app.git
+cd weather-app
 
-2. Install the required libraries:
-    ```bash
-    pip install Pillow requests
-    ```
+# 2. Install the required libraries
+pip install Pillow requests python-dotenv
 
-3. Obtain an API key from [OpenWeatherMap](https://home.openweathermap.org/users/sign_up) and replace the placeholder API key in the code:
-    ```python
-    api_key = 'your_api_key_here'
-    ```
+# 3. Obtain an API key from OpenWeatherMap
+#    Visit https://home.openweathermap.org/users/sign_up to create an account
 
-## Usage
+# 4. Set up the API key as an environment variable:
 
-1. Run the application:
-    ```bash
-    python weather_app.py
-    ```
+# Option 1: Create a .env file
+touch .env
+
+# Add the following to the .env file (replace 'your_api_key_here' with your API key)
+OPENWEATHER_API_KEY=your_api_key_here
+
+# Option 2: Set the environment variable directly in your terminal
+
+# For Linux/Mac:
+export OPENWEATHER_API_KEY=your_api_key_here
+
+# For Windows (Command Prompt):
+set OPENWEATHER_API_KEY=your_api_key_here
+
+
+ Run the application
+python weather_app.py
 
 2. **Features**:
    - Enter a city name to fetch the weather data.
