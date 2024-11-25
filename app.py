@@ -6,7 +6,9 @@ from datetime import datetime, timedelta
 from PIL import Image, ImageTk  
 
 # API Key
-api_key = '9e6744cc26095639e6e88ec0ff27998d'
+api_key = os.getenv('OPENWEATHER_API_KEY')
+if not api_key:
+    raise ValueError("API key not found. Please set the 'OPENWEATHER_API_KEY' environment variable.")
 
 # List to store recent searches
 recent_searches = []
